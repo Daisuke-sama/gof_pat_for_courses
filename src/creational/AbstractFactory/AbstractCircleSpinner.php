@@ -9,9 +9,7 @@
 namespace GOF\Creational\AbstractFactory;
 
 
-abstract class AbstractCircleSpinner
+abstract class AbstractCircleSpinner extends AbstractSpinner
 {
-    abstract function getModel();
-
-    abstract function getAuthor();
+	private $shape = 'circle';
 }

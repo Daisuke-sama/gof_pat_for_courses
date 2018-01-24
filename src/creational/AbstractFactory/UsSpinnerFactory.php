@@ -1,18 +1,17 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Royal_PC
+ * User: Pavel_Burylichau
  * Date: 24-Jan-18
- * Time: 1:14 AM
+ * Time: 4:28 PM
  */
 
 namespace GOF\Creational\AbstractFactory;
 
 
-class ChineseSpinnerFactory extends AbstractSpinnerFactory
+class UsSpinnerFactory extends AbstractSpinnerFactory
 {
-
-    private $context = 'Chinese';
+    private $context = 'Us';
 
     function printContext()
     {
@@ -21,12 +20,11 @@ class ChineseSpinnerFactory extends AbstractSpinnerFactory
 
     function makeCircleSpinner()
     {
-        return new ChineseCircleSpinner();
+        return new UsCircleSpinner();
     }
 
     function makeSquareSpinner()
     {
-        return new ChineseSquareSpinner();
+        return new UsSquareSpinner();
     }
-
 }
