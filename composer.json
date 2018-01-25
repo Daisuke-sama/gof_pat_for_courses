@@ -1,5 +1,7 @@
 {
-  "require": {},
+  "require": {
+    "mattketmo/camel" : "*"
+  },
   "autoload": {
     "psr-4": {
       "GOF\\Creational\\": "src/creational"
