@@ -12,4 +12,4 @@ require_once __DIR__ . '\..\..\..\vendor\autoload.php';
 
 $adapter = new BigBuddyAdapter();
 $client = new BigBuddyClient($adapter);
-$client->CreateBadaBoom();
+$client->createBadaBoom();

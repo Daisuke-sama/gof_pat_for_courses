@@ -21,7 +21,7 @@ class BigBuddyClient
         $this->bomber = $adapter;
     }
 
-    public function CreateBadaBoom()
+    public function createBadaBoom()
     {
         $this->bomber->createBigBuddyBadaBoom();
     }
