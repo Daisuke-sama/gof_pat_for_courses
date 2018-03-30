@@ -9,11 +9,20 @@
 namespace GOF\Creational\AbstractFactory;
 
 
+/**
+ * Class AbstractSpinner
+ *
+ * @package GOF\Creational\AbstractFactory
+ */
 abstract class AbstractSpinner
 {
-
+	/**
+	 * @return string
+	 */
     abstract function getModel();
 
+	/**
+	 * @return string
+	 */
     abstract function getInventor();
-
 }

@@ -9,24 +9,36 @@
 namespace GOF\Creational\AbstractFactory;
 
 
+/**
+ * Class ChineseSpinnerFactory
+ *
+ * @package GOF\Creational\AbstractFactory
+ */
 class ChineseSpinnerFactory extends AbstractSpinnerFactory
 {
+	private $context = 'Chinese';
 
-    private $context = 'Chinese';
+	/**
+	 * Prints context of instance.
+	 */
+	function printContext()
+	{
+		print 'context: ' . $this->context . ' // ';
+	}
 
-    function printContext()
-    {
-        print 'context: ' . $this->context . ' // ';
-    }
+	/**
+	 * @return ChineseCircleSpinner
+	 */
+	function makeCircleSpinner()
+	{
+		return new ChineseCircleSpinner();
+	}
 
-    function makeCircleSpinner()
-    {
-        return new ChineseCircleSpinner();
-    }
-
-    function makeSquareSpinner()
-    {
-        return new ChineseSquareSpinner();
-    }
-
+	/**
+	 * @return ChineseSquareSpinner
+	 */
+	function makeSquareSpinner()
+	{
+		return new ChineseSquareSpinner();
+	}
 }

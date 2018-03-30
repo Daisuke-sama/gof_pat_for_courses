@@ -9,7 +9,15 @@
 namespace GOF\Creational\AbstractFactory;
 
 
+/**
+ * Class AbstractSquareSpinner
+ *
+ * @package GOF\Creational\AbstractFactory
+ */
 abstract class AbstractSquareSpinner extends AbstractSpinner
 {
+	/**
+	 * @var string
+	 */
     private $shape = 'Square';
 }

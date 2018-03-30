@@ -9,15 +9,30 @@
 namespace GOF\Creational\AbstractFactory;
 
 
-use function strcmp;
-
+/**
+ * Class UsCircleSpinner
+ *
+ * @package GOF\Creational\AbstractFactory
+ */
 class UsCircleSpinner extends AbstractCircleSpinner
 {
+	/**
+	 * @var string
+	 */
     private $model;
+	/**
+	 * @var string
+	 */
     private $inventor;
 
+	/**
+	 * @var string
+	 */
     private static $oddOrEven = 'odd';
 
+	/**
+	 * UsCircleSpinner constructor.
+	 */
     function __construct()
     {
         $this->model    = 'United States';
@@ -29,11 +44,17 @@ class UsCircleSpinner extends AbstractCircleSpinner
         }
     }
 
+	/**
+	 * @return string
+	 */
     function getModel()
     {
         return $this->model;
     }
 
+	/**
+	 * @return string
+	 */
     function getInventor()
     {
         return $this->inventor;

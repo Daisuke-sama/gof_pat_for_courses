@@ -9,7 +9,15 @@
 namespace GOF\Creational\AbstractFactory;
 
 
+/**
+ * Class AbstractCircleSpinner
+ *
+ * @package GOF\Creational\AbstractFactory
+ */
 abstract class AbstractCircleSpinner extends AbstractSpinner
 {
+	/**
+	 * @var string
+	 */
 	private $shape = 'circle';
 }
