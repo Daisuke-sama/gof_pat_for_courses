@@ -13,22 +13,48 @@ namespace GOF\Creational\Singleton;
 use Exception;
 use function is_null;
 
+/**
+ * Class MotherSingleton
+ *
+ * @package GOF\Creational\Singleton
+ */
 class MotherSingleton
 {
+	/**
+	 * @var null
+	 */
     private static $Mother = null;
+	/**
+	 * @var string
+	 */
     private $_name = 'My Only Mother';
+	/**
+	 * @var int
+	 */
     private $_age = 52;
+	/**
+	 * @var string
+	 */
     private $_town = 'Mothertown';
 
+	/**
+	 * MotherSingleton constructor.
+	 */
     private function __construct()
     {
     }
 
+	/**
+	 * @throws Exception
+	 */
     function __clone()
     {
         throw new Exception('Only one mother you can have.');
     }
 
+	/**
+	 * @return MotherSingleton|null
+	 */
     static function callMother()
     {
         if (is_null(self::$Mother)) {
