@@ -27,10 +27,10 @@ print $owner->status();
 print ' |||||||||| Testing for a BAD pet owner. ====>>>> ';
 $owner = new BadPetOwner('Sticky', 'bad');
 print $owner->status() . ' ';
-$owner->walkAPet();
+$owner->walkThePet();
 
 
 print ' |||||||||| Testing for a NEUTURAL pet owner. ====>>>> ';
 $owner = new NeuturalPetOwner('Neucky', '');
-$owner->walkAPet();
+$owner->walkThePet();
 print ' ' . $owner->status();

@@ -11,7 +11,7 @@ namespace GOF\Structural\Bridge;
 
 abstract class APetOwnerActions
 {
-    abstract function walkThePet(string $name) : void;
+    abstract function walkAPet(string $name) : void;
 
     abstract function checkItsHealth() : string;
 }

@@ -49,9 +49,9 @@ abstract class APetOwner
         }
     }
 
-    public function walkAPet(): void
+    public function walkThePet(): void
     {
-        $this->ownerItself->walkThePet($this->petName);
+        $this->ownerItself->walkAPet($this->petName);
     }
 
     public function healthcheck(): string

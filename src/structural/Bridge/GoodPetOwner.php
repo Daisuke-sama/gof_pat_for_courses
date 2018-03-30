@@ -22,7 +22,7 @@ class GoodPetOwner extends APetOwner
 
     public function status(): string
     {
-        $this->walkAPet();
+        $this->walkThePet();
 
         return " I'm a $this->ownerName, and I'm glad that my pet is " . strtoupper($this->healthcheck()) . ".";
     }

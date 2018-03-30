@@ -11,7 +11,7 @@ namespace GOF\Structural\Bridge;
 
 class BadPetOwnerActions extends APetOwnerActions
 {
-    function walkThePet(string $name): void
+    function walkAPet(string $name): void
     {
         print "Because I'm walking with my pet $name and beating it heavily.";
     }
