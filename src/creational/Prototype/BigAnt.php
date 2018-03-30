@@ -10,6 +10,11 @@ declare(strict_types=1);
 namespace GOF\Creational\Prototype;
 
 
+/**
+ * Class BigAnt
+ *
+ * @package GOF\Creational\Prototype
+ */
 class BigAnt extends AbstractAntPrototype
 {
     /**
@@ -17,17 +22,28 @@ class BigAnt extends AbstractAntPrototype
      */
     protected static $count = 1;
 
+	/**
+	 * BigAnt constructor.
+	 *
+	 * @param string $home
+	 */
     function __construct(string $home)
     {
         parent::__construct('Big', $home);
     }
 
+	/**
+	 * @return void
+	 */
     function __clone()
     {
         $this->_number = self::$count + 1;
         self::$count++;
     }
 
+	/**
+	 * @return string
+	 */
     function __toString(): string
     {
         return parent::__toString() . ', its number: ' . $this->_number;

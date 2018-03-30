@@ -11,6 +11,11 @@ declare(strict_types=1);
 namespace GOF\Creational\Prototype;
 
 
+/**
+ * Class AbstractAntPrototype
+ *
+ * @package GOF\Creational\Prototype
+ */
 abstract class AbstractAntPrototype
 {
     /**
@@ -28,6 +33,12 @@ abstract class AbstractAntPrototype
      */
     protected $_number;
 
+	/**
+	 * AbstractAntPrototype constructor.
+	 *
+	 * @param string $type
+	 * @param string $home
+	 */
     function __construct(string $type, string $home)
     {
         $this->_type = $type;
@@ -35,17 +46,25 @@ abstract class AbstractAntPrototype
         $this->_number = 1;
     }
 
+	/**
+	 * @return string
+	 */
     function __toString() : string
     {
         return 'Ant type: ' . $this->_type
                . ', in its home: ' . $this->_home;
     }
 
+	/**
+	 * @return string
+	 */
     function getAnt() : string
     {
         return $this->__toString();
     }
 
-
+	/**
+	 * @return void
+	 */
     abstract function __clone();
 }
