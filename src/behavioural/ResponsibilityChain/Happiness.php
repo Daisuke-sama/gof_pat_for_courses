@@ -8,6 +8,9 @@
 
 namespace GOF\Behavioural\ResponsibilityChain;
 
+use function strcmp;
+use function trim;
+
 
 /**
  * Class Kindness
@@ -23,8 +26,14 @@ class Happiness extends EmotionBase
      *
      * @return mixed
      */
-    public function activate(string $stimulus)
+    public function activate(string $stimulus): string
     {
-        // TODO: Implement activate() method.
+        if (strcmp('happiness', $stimulus) === 0) {
+            return Happiness::class;
+        }
+
+        $this->print_service($stimulus);
+        
+        return $this->emotion->activate($stimulus) ?? $this->notFound;
     }
 }

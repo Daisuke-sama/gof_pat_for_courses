@@ -8,6 +8,8 @@
 
 namespace GOF\Behavioural\ResponsibilityChain;
 
+use function strcmp;
+
 
 /**
  * Class Love
@@ -23,8 +25,14 @@ class Love extends EmotionBase
      *
      * @return mixed
      */
-    public function activate(string $stimulus)
+    public function activate(string $stimulus): string
     {
-        // TODO: Implement activate() method.
+        if (strcmp('love', $stimulus) === 0) {
+            return Love::class;
+        }
+
+        $this->print_service($stimulus);
+
+        return $this->emotion->activate($stimulus) ?? $this->notFound;
     }
 }

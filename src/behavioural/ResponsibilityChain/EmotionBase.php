@@ -8,6 +8,9 @@
 
 namespace GOF\Behavioural\ResponsibilityChain;
 
+use const PHP_EOL;
+use ReflectionClass;
+
 
 /**
  * Class EmotionBase
@@ -19,7 +22,12 @@ abstract class EmotionBase
     /**
      * @var EmotionBase
      */
-    private $emotion;
+    protected $emotion;
+
+    /**
+     * @var string
+     */
+    protected $notFound = 'Emotion was not found.';
 
     /**
      * Sets up another emotion to proceed after execution of itself.
@@ -32,11 +40,23 @@ abstract class EmotionBase
     }
 
     /**
+     * Prints service message if the class is skipped in the chain.
+     *
+     * @param string $comparison
+     *
+     * @throws \ReflectionException
+     */
+    protected function print_service(string $comparison) {
+        $reflection = new ReflectionClass($this);
+        print 'Trying to activate ' . $reflection->getName() . ', but the ' . $comparison . ' was got.' . PHP_EOL;
+    }
+
+    /**
      * The emotion activator.
      *
      * @param string $stimulus The matter to splash the emotion.
      *
      * @return mixed
      */
-    abstract public function activate(string $stimulus);
+    abstract public function activate(string $stimulus): string;
 }

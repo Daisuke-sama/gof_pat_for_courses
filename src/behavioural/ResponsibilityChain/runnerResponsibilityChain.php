@@ -8,3 +8,14 @@
 
 require_once __DIR__ . '../../../vendor/autoload.php';
 
+$love = new \GOF\Behavioural\ResponsibilityChain\Love();
+$anger = new \GOF\Behavioural\ResponsibilityChain\Anger();
+$anger->chainWith($love);
+$happiness = new \GOF\Behavioural\ResponsibilityChain\Happiness();
+$happiness->chainWith($anger);
+$sadness = new \GOF\Behavioural\ResponsibilityChain\Sadness();
+$sadness->chainWith($happiness);
+$joy = new \GOF\Behavioural\ResponsibilityChain\Joy();
+$joy->chainWith($sadness);
+
+$love->activate('sadness');

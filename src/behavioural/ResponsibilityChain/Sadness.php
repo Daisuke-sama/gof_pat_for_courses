@@ -8,6 +8,8 @@
 
 namespace GOF\Behavioural\ResponsibilityChain;
 
+use function strcmp;
+
 
 /**
  * Class Sadness
@@ -23,8 +25,14 @@ class Sadness extends EmotionBase
      *
      * @return mixed
      */
-    public function activate(string $stimulus)
+    public function activate(string $stimulus): string
     {
-        // TODO: Implement activate() method.
+        if (strcmp('sadness', $stimulus) === 0) {
+            return Sadness::class;
+        }
+
+        $this->print_service($stimulus);
+
+        return $this->emotion->activate($stimulus) ?? $this->notFound;
     }
 }
