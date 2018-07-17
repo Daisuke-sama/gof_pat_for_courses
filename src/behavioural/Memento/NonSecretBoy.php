@@ -8,8 +8,18 @@
 
 namespace GOF\Behavioural\Memento;
 
-
-class NonSecretBoy
+/**
+ * Class NonSecretBoy
+ *
+ * @package GOF\Behavioural\Memento
+ */
+class NonSecretBoy extends ABoy
 {
-
+    /**
+     * @return MementoBoy
+     */
+    public function createMemento(): MementoBoy
+    {
+        return new MementoBoy($this->getName(), $this->getAge(), $this->getSecret());
+    }
 }

@@ -9,7 +9,26 @@
 namespace GOF\Behavioural\Memento;
 
 
+/**
+ * Class BoySaveItem
+ *
+ * @package GOF\Behavioural\Memento
+ */
 class BoySaveItem
 {
 
+    /**
+     * @var string
+     */
+    public $Name;
+
+    /**
+     * @var int
+     */
+    public $Age;
+
+    /**
+     * @var string
+     */
+    public $Secret;
 }
